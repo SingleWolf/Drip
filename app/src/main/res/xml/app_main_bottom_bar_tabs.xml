@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        barColorWhenSelected="#3F51B5"
+        icon="@drawable/app_main_tabs_icon_ui"
+        id="@+id/tabUi"
+        title="UI" />
+    <tab
+        barColorWhenSelected="#5D4037"
+        icon="@drawable/app_main_tabs_icon_optimization"
+        id="@+id/tabOptimization"
+        title="优化" />
+    <tab
+        barColorWhenSelected="#7B1FA2"
+        icon="@drawable/app_main_tabs_icon_preference"
+        id="@+id/tabPreference"
+        title="优选" />
+    <tab
+        barColorWhenSelected="#FF9800"
+        icon="@drawable/app_main_tabs_icon_notes"
+        id="@+id/tabNotes"
+        title="札记" />
+</tabs>
