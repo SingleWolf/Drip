@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -9,6 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -16,24 +19,42 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    //给模块设置不同的资源前缀，可以避免重复命名
+    resourcePrefix "app_"
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+            resources.srcDirs = ['src/main/java', 'src/main/aidl']
+            aidl.srcDirs = ['src/main/aidl']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+
+            if (IsBuildMudle.toBoolean()) {
+                java.srcDirs += "src/main/debug/java/"
+            } else {
+                java.srcDirs += "src/main/release/java/"
+            }
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation project(':flexiblecore')
-    //引入第三方开源框架
-    implementation 'com.roughike:bottom-bar:2.3.1'
-    implementation 'com.github.rey5137:material:1.2.4'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
-    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation 'com.google.code.gson:gson:2.8.2'
 
+    if (!IsBuildMudle.toBoolean()) {
+        implementation project(':remoteserver')
+    }else{
+        implementation project(':flexiblecore')
+    }
+    //引入第三方开源框架
+    api("com.roughike:bottom-bar:2.3.1"){
+        exclude group: 'com.android.support'
+    }
+    //router
+    annotationProcessor 'com.github.mzule.activityrouter:compiler:1.1.7'
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
 }

@@ -1,8 +1,8 @@
-package com.walker.code;
+package com.walker.drip;
 
 import android.app.Application;
-import android.content.Context;
 
+import com.github.mzule.activityrouter.annotation.Modules;
 import com.squareup.leakcanary.LeakCanary;
 import com.walker.flexiblecore.exception.CrashHandler;
 import com.walker.flexiblecore.exception.OnCrashListener;
@@ -14,6 +14,7 @@ import com.walker.flexiblecore.util.ToastUtils;
  * @email feitianwumu@163.com
  * @desc Application
  */
+@Modules({"app"})
 public class WalkerApplication extends Application {
     /**
      * application
@@ -48,6 +49,7 @@ public class WalkerApplication extends Application {
     private void init() {
         sInstance = this;
         ToastUtils.init(this);
+        SPHelper.init(this);
         //为应用设置异常处理，然后程序才能获取未处理的异常
         CrashHandler crashHandler = CrashHandler.getInstance();
         crashHandler.init(new OnCrashListener() {

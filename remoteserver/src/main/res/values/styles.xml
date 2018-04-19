@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="RemoteTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/remote_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/remote_colorPrimaryDark</item>
+        <item name="colorAccent">@color/remote_colorAccent</item>
+    </style>
+
+    <style name="RemoteTheme.TransNav" parent="RemoteTheme" />
+</resources>

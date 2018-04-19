@@ -1,1 +1,1 @@
-include ':app', ':flexiblecore'
+include ':app', ':flexiblecore', ':remoteserver'

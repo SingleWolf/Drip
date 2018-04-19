@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Drip.iml" filepath="$PROJECT_DIR$/Drip.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/flexiblecore/flexiblecore.iml" filepath="$PROJECT_DIR$/flexiblecore/flexiblecore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/remoteserver/remoteserver.iml" filepath="$PROJECT_DIR$/remoteserver/remoteserver.iml" />
     </modules>
   </component>
 </project>
