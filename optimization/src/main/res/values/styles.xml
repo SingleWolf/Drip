@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="OptimizationTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/optimization_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/optimization_colorPrimaryDark</item>
+        <item name="colorAccent">@color/optimization_colorAccent</item>
+    </style>
+
+    <style name="OptimizationTheme.TransNav" parent="OptimizationTheme" />
+</resources>

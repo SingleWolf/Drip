@@ -16,7 +16,7 @@ import com.walker.flexiblecore.util.ToastUtils;
  * @email feitianwumu@163.com
  * @desc Application
  */
-@Modules({"app", "remoteserver"})
+@Modules({"app", "remoteserver","ui","optimization","preference","notes"})
 public class WalkerApplication extends Application {
     /**
      * application

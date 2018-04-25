@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="UiTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ui_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/ui_colorPrimaryDark</item>
+        <item name="colorAccent">@color/ui_colorAccent</item>
+    </style>
+
+    <style name="UiTheme.TransNav" parent="UiTheme" />
+</resources>

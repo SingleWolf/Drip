@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.walker.optimization">
+
+    <application
+        android:label="@string/optimization_app_name"
+        android:theme="@style/OptimizationTheme">
+        <activity
+            android:name=".activity.OptimizationMainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+</manifest>

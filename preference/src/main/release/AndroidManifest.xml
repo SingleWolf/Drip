@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.walker.preference" >
+    <application android:theme="@style/PreferenceTheme">
+        <activity
+            android:name=".activity.PreferenceMainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+</manifest>

@@ -30,6 +30,7 @@ dependencies {
 
     compile 'com.android.support:design:26.1.0'
     compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     //引入第三方开源框架
@@ -38,6 +39,8 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     //gson
     compile 'com.google.code.gson:gson:2.8.2'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.8.1'
     //router
     compile 'com.github.mzule.activityrouter:activityrouter:1.2.2'
 }

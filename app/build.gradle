@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
 
-apply plugin: 'com.jakewharton.butterknife'
-
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -45,6 +43,10 @@ dependencies {
 
     if (!IsBuildMudle.toBoolean()) {
         implementation project(':remoteserver')
+        implementation project(':ui')
+        implementation project(':optimization')
+        implementation project(':preference')
+        implementation project(':notes')
     }else{
         implementation project(':flexiblecore')
     }
@@ -55,6 +57,5 @@ dependencies {
     //router
     annotationProcessor 'com.github.mzule.activityrouter:compiler:1.1.7'
     //butterknife
-    implementation 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

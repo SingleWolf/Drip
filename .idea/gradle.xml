@@ -10,7 +10,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/flexiblecore" />
+            <option value="$PROJECT_DIR$/notes" />
+            <option value="$PROJECT_DIR$/optimization" />
+            <option value="$PROJECT_DIR$/preference" />
             <option value="$PROJECT_DIR$/remoteserver" />
+            <option value="$PROJECT_DIR$/ui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

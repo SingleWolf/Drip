@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="PreferenceTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/preference_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/preference_colorPrimaryDark</item>
+        <item name="colorAccent">@color/preference_colorAccent</item>
+    </style>
+
+    <style name="PreferenceTheme.TransNav" parent="PreferenceTheme" />
+</resources>

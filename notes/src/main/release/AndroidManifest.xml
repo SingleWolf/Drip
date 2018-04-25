@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.walker.notes">
+
+    <application android:theme="@style/NotesTheme">
+        <activity
+            android:name=".activity.NotesMainActivity"
+            android:screenOrientation="portrait"></activity>
+    </application>
+</manifest>

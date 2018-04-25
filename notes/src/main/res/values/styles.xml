@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="NotesTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/notes_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/notes_colorPrimaryDark</item>
+        <item name="colorAccent">@color/notes_colorAccent</item>
+    </style>
+
+    <style name="NotesTheme.TransNav" parent="NotesTheme" />
+</resources>

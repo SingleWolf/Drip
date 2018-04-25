@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.walker.ui">
+
+    <application android:theme="@style/UiTheme">
+        <activity
+            android:name=".activity.UiMainActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>
