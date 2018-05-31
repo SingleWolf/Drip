@@ -1,11 +1,11 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -20,27 +20,46 @@ android {
         }
     }
 
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+            options.addStringOption('encoding', 'UTF-8')
+        }
+    }
+
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    androidTestCompile 'com.android.support.test:runner:1.0.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    compile 'com.android.support:design:26.1.0'
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.android.support:cardview-v7:26.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    api "com.android.support:design:${rootProject.ext.androidSupportVersion}"
+    api "com.android.support:appcompat-v7:${rootProject.ext.androidSupportVersion}"
+    api "com.android.support:cardview-v7:${rootProject.ext.androidSupportVersion}"
+    api "com.android.support.constraint:constraint-layout:${rootProject.ext.androidConstraintLayoutVerson}"
 
     //引入第三方开源框架
     //leakcanary
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    debugApi "com.squareup.leakcanary:leakcanary-android:${rootProject.ext.leakCanaryVersion}"
+    releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:${rootProject.ext.leakCanaryVersion}"
     //gson
-    compile 'com.google.code.gson:gson:2.8.2'
+    api "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
     //butterknife
-    compile 'com.jakewharton:butterknife:8.8.1'
+    api "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
     //router
-    compile 'com.github.mzule.activityrouter:activityrouter:1.2.2'
+    api "com.github.mzule.activityrouter:activityrouter:${rootProject.ext.activityRouterVersion}"
+}
+
+//JCenter
+apply plugin: 'com.novoda.bintray-release' // must be applied after your artifact generating plugin (eg. java / com.android.library)
+
+publish {
+    userOrg = 'singlewolf'//bintray.com用户名
+    groupId = 'com.walker.drip'//jcenter上的路径
+    artifactId = 'flexiblecore'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = 'A customizable utils on Android'//描述，不重要
+    website = 'https://github.com/SingleWolf/Drip/flexiblecore'//项目的GitHub网站
 }

@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.walker.drip"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -29,7 +29,7 @@ android {
             res.srcDirs = ['src/main/res']
             assets.srcDirs = ['src/main/assets']
 
-            if (IsBuildMudle.toBoolean()) {
+            if (rootProject.ext.isBuildMudle) {
                 java.srcDirs += "src/main/debug/java/"
             } else {
                 java.srcDirs += "src/main/release/java/"
@@ -41,17 +41,17 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    if (!IsBuildMudle.toBoolean()) {
+    if (rootProject.ext.isBuildMudle == false) {
         implementation project(':remoteserver')
         implementation project(':ui')
         implementation project(':optimization')
         implementation project(':preference')
         implementation project(':notes')
-    }else{
+    } else {
         implementation project(':flexiblecore')
     }
     //引入第三方开源框架
-    api("com.roughike:bottom-bar:2.3.1"){
+    api("com.roughike:bottom-bar:2.3.1") {
         exclude group: 'com.android.support'
     }
     //router
